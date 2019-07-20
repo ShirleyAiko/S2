@@ -1,0 +1,39 @@
+import matplotlib.pyplot as plt
+from copy import deepcopy
+oriImage = [[80,80,255,80,80,255,80,80],[80,80,255,80,80,255,80,80],[255,80,120,120,120,120,255,80],[255,80,255,255,255,255,80,80],[255,80,120,120,120,120,80,80]]
+
+def inc10perc(image):
+    prev = deepcopy(image)
+    for i in range(len(prev)):
+        for j in range(len(prev[0])):
+            prev[i][j] *= 1.1
+            if prev[i][j] > 255:
+                prev[i][j] = True
+    return prev
+
+def swapimg(image):
+    prev = deepcopy(image)
+    newone = []
+    for i in range(len(prev)):
+        newnewone = []
+        for j in range(len(prev[0])):
+            newnewone.append(prev[i][7-j])
+        newone.append(newnewone)
+    return newone
+    
+def clipimg(image):
+    prev = deepcopy(image)
+    MaxVal = int(input("please input your MAXIMUM VALUE: "))
+    for i in range(len(prev)):
+        for j in range(len(prev[0])):
+            if prev[i][j] > MaxVal:
+                prev[i][j] = MaxVal
+    return prev
+
+
+fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4)
+ax1.imshow(oriImage)
+ax2.imshow(inc10perc(oriImage))
+ax3.imshow(swapimg(oriImage))
+ax4.imshow(clipimg(oriImage))
+plt.show

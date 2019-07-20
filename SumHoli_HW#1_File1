@@ -36,4 +36,4 @@ ax1.imshow(oriImage)
 ax2.imshow(inc10perc(oriImage))
 ax3.imshow(swapimg(oriImage))
 ax4.imshow(clipimg(oriImage))
-plt.show
+plt.show()

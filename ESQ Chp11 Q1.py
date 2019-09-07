@@ -1,0 +1,10 @@
+Count = 1
+Total = 0
+Weighting = 10
+while Count != 9:
+    Digit = int(input("Digit: "))
+    Value = Digit * Weighting
+    Total += Value
+    Weighting -= 1
+Reminder = Total % 11
+CheckDigit = 11-Remainder
